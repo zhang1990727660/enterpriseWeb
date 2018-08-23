@@ -1,0 +1,83 @@
+<view class="container">
+  <!-- nav -->
+  <view class="nav">
+    <swiper indicator-dots='{{indicatorDots}}' indicator-color="{{indicatorColor}}"
+            indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}"
+            interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{banners}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.picUrl}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+   <!-- search -->
+  <view class="search">
+    <view class="search-con">
+        <view class="search-icon"><image src="/images/search-pic.png"/></view>
+        <input class="search-input" placeholder="请输入索搜内容" id="searchCon"></input>
+        <button class="search-btn">搜索</button>   
+    </view>
+  </view>
+  <!-- typeTab -->
+  <view class="type-tab">
+    <scroll-view class="type-tab-scroll" scroll-x>
+
+     <view wx:for-items="{{categories}}" wx:key="id" class="type-tab-item {{typeSelected==item.id ? 'active' : ''}}" id="{{item.id}}" bindtap="switchType">{{item.name}}</view>
+    <!--
+      <view class="type-tab-item active">全部</view>
+      <view class="type-tab-item">上装</view>
+      <view class="type-tab-item">裤装</view>
+      <view class="type-tab-item">家居内衣</view>
+      <view class="type-tab-item">特价区</view>
+      <view class="type-tab-item">11</view>
+      <view class="type-tab-item">22</view>
+      <view class="type-tab-item">33</view>
+      <view class="type-tab-item">44</view>
+      <view class="type-tab-item">55</view>
+      -->
+    </scroll-view>
+  </view>
+
+  <!-- 公告 -->
+  <view class="notic">
+    <view class="notic-title" >公告:</view>
+    <view class="notic-detail">商城新开张，优惠多多，戳，戳，戳我看详情</view>
+  </view>
+
+  <!-- goods -->
+  <view class="goods-container">
+    <!-- goods item -->
+    <view class="goods-item">
+      <view class="goods-img"><image src="../../images/goods01.png"/></view>
+      <view class="goods-intro">
+        <view class="goods-name">1-2</view>
+        <view class="goods-price">¥80</view>
+      </view>
+    </view>
+    <!-- goods item -->
+    <view class="goods-item">
+      <view class="goods-img"><image src="../../images/goods01.png"/></view>
+      <view class="goods-intro">
+        <view class="goods-name">1-2</view>
+        <view class="goods-price">¥80</view>
+      </view>
+    </view>
+    <!-- goods item -->
+    <view class="goods-item">
+      <view class="goods-img"><image src="../../images/goods01.png"/></view>
+      <view class="goods-intro">
+        <view class="goods-name">1-2</view>
+        <view class="goods-price">¥80</view>
+      </view>
+    </view>
+    <!-- goods item -->
+    <view class="goods-item">
+      <view class="goods-img"><image src="../../images/goods01.png"/></view>
+      <view class="goods-intro">
+        <view class="goods-name">1-2</view>
+        <view class="goods-price">¥80</view>
+      </view>
+    </view>
+  </view>
+</view> 
