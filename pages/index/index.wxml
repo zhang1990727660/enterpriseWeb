@@ -15,8 +15,8 @@
   <view class="search">
     <view class="search-con">
         <view class="search-icon"><image src="/images/search-pic.png"/></view>
-        <input class="search-input" placeholder="请输入索搜内容" id="searchCon"></input>
-        <button class="search-btn">搜索</button>   
+        <input class="search-input" placeholder="请输入索搜内容" maxlength="30" bindinput="listenerSearchInput" bindconfirm='toSearch' id="searchCon"></input>
+        <button class="search-btn" bindtap="toSearch">搜索</button>   
     </view>
   </view>
   <!-- typeTab -->
@@ -39,45 +39,23 @@
     </scroll-view>
   </view>
 
-  <!-- 公告 -->
+  <!-- 公告 start -->
   <view class="notic">
     <view class="notic-title" >公告:</view>
     <view class="notic-detail">商城新开张，优惠多多，戳，戳，戳我看详情</view>
   </view>
-
-  <!-- goods -->
+  <!-- 公告 end -->
+  <!-- goods start-->
   <view class="goods-container">
-    <!-- goods item -->
-    <view class="goods-item">
-      <view class="goods-img"><image src="../../images/goods01.png"/></view>
+    <!-- goods item start-->
+    <view wx:for="{{goods}}" wx:key="id" class="goods-item">
+      <view class="goods-img"><image src="{{item.pic}}"/></view>
       <view class="goods-intro">
-        <view class="goods-name">1-2</view>
-        <view class="goods-price">¥80</view>
+        <view class="goods-name">{{item.name}}</view>
+        <view class="goods-price">{{'¥'+item.minPrice}}</view>
       </view>
     </view>
-    <!-- goods item -->
-    <view class="goods-item">
-      <view class="goods-img"><image src="../../images/goods01.png"/></view>
-      <view class="goods-intro">
-        <view class="goods-name">1-2</view>
-        <view class="goods-price">¥80</view>
-      </view>
-    </view>
-    <!-- goods item -->
-    <view class="goods-item">
-      <view class="goods-img"><image src="../../images/goods01.png"/></view>
-      <view class="goods-intro">
-        <view class="goods-name">1-2</view>
-        <view class="goods-price">¥80</view>
-      </view>
-    </view>
-    <!-- goods item -->
-    <view class="goods-item">
-      <view class="goods-img"><image src="../../images/goods01.png"/></view>
-      <view class="goods-intro">
-        <view class="goods-name">1-2</view>
-        <view class="goods-price">¥80</view>
-      </view>
-    </view>
+    <!-- good item end -->
   </view>
+  <!-- goods end -->
 </view> 

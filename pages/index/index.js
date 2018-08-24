@@ -1,4 +1,4 @@
-import { bannerList, getCategoryAll} from '../../api/reqUrl.js'
+import { bannerList, getCategoryAll, getGoodList} from '../../api/reqUrl.js'
 //获取应用实例
 var app=getApp()
 
@@ -15,7 +15,9 @@ Page({
     interval: 3000,     //切换间隔时间
     duration: 1000,
     categories:[],      //类别
-    typeSelected:0,     //商品类别选中的那一项    
+    typeSelected:0,     //商品类别选中的那一项   
+    goods:[],           //商品列表 
+    searchInput:null,   //索搜的内容
   },
 
   /**
@@ -25,6 +27,7 @@ Page({
     this.getBannerList();
     this.getCategoryAll();
   },
+
   /**
    * 获取banner信息列表
    */
@@ -50,6 +53,7 @@ Page({
       }
     })
   },
+
   /**
    * 获取商品类别信息
    */
@@ -66,59 +70,75 @@ Page({
             categories:data,
             typeSelected:0,
           })
+          that.getGoodList(0);//请求全部的商品
         }
       }
     })
   },
+
   /**
    * 切换商品类别
    */
   switchType:function(e){
     var id=e.target.id;
     this.setData({
-      typeSelected:id
+      typeSelected:id,
+      searchInput:null,
+    })
+    this.getGoodList(id);
+  },
+
+  /**
+   * 获取商品列表
+   */
+  getGoodList: function (categoryId, nameLike){
+    var categoryId_new= !categoryId ? "" : categoryId;
+    var nameLike_new = !nameLike ? "" : nameLike;
+    var that=this;
+    wx.request({
+      url:getGoodList,
+      data:{
+        categoryId: categoryId_new,
+        nameLike: nameLike_new
+      },
+      success:function(res){
+        //console.log("res:",res);
+        var dataObj=res.data || {};
+        var goods = dataObj.data;
+        that.setData({
+            goods:[]
+        });
+        if (goods && goods.length>0){
+            that.setData({
+              goods:goods
+            })
+        }
+      }
     });
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
 
   /**
-   * 生命周期函数--监听页面显示
+   * 监听索搜框输入的内容
    */
-  onShow: function () {
-    
-  },
+  listenerSearchInput:function(e){
+    console.log("input:",e);
+    this.setData({
+      searchInput:e.detail.value
+    });
+  }, 
 
   /**
-   * 生命周期函数--监听页面隐藏
+   * 去索搜
    */
-  onHide: function () {
-    
+  toSearch:function(){
+    this.getGoodList(this.data.typeSelected, this.data.searchInput);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
+  
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    console.log("come in");
   },
 
   /**
