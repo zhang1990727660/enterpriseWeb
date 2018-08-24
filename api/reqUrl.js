@@ -1,4 +1,5 @@
-var root ="https://api.it120.cc/tz";
+// var root ="https://api.it120.cc/tz";
+var root ="http://www.shoping31858.top:8080/mockjs/1/";
 
 const reqUrl={
   bannerList: root +"/banner/list",                //首页导航列表

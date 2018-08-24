@@ -1,0 +1,15 @@
+<page>
+  <view class="container">
+    <!-- swiper start -->
+    <view class="swiper">
+      <image src="../../images/banner02.jpg"/>
+    </view>
+    <!-- swiper end -->
+    <!-- goods-info start -->
+    <view class="goods-info">
+      <view></view>
+    </view>
+    <!-- goods-info end -->
+
+  </view>
+</page>

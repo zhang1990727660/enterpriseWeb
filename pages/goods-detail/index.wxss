@@ -1,0 +1,8 @@
+.swiper{
+  width:100%;
+  height:748rpx;
+  background:#DDD;
+}
+.goods-info{
+  
+}
