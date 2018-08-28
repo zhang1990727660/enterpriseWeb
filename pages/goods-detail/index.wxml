@@ -1,5 +1,4 @@
-<page>
-  <view class="container">
+<view class="container">
     <!-- swiper start -->
     <view class="swiper">
       <image src="../../images/banner02.jpg"/>
@@ -7,9 +6,63 @@
     <!-- swiper end -->
     <!-- goods-info start -->
     <view class="goods-info">
-      <view></view>
+      <view class="goods-name">10-12岁袜子</view>
+      <view class="goods-share">分享有赏，好友下单后，可得5元 现金奖励</view>
+      <view class="goods-detail">
+        <view class="goods-price">¥80</view>
+        <view class="goods-buy-num.png">购买4次</view>
+        <view class="goods-appraise-num">共收到1次好评</view>
+      </view>
+      <view class="goods-share-img">
+        <image src="../../images/qd.png"/>
+        <label class="goods-share-title">分享有奖</label>
+      </view>
     </view>
     <!-- goods-info end -->
+    <!-- goods-detail start -->
+    <view class="goods-intro">
+      <view class="goods-intro-title">商品介绍</view>
+      <view class="goods-intro-detail">
+        <view><image src="../../images/goods01.png"/></view>
+        <view><image src="../../images/goods01.png"/></view>
+        <view><image src="../../images/goods01.png"/></view>
+        <view><image src="../../images/goods01.png"/></view>
+      </view>
+    </view>
+    <!-- goods-detail end -->
 
+    <view class="comment">
+      <view class="comment-title">评论</view>
+      <view class="comment-list">
+        <view class="comment-item">
+          <view class="comment-img"><image src="../../images/qd.png"/></view>
+          <view class="comment-detail">
+            <view class="comment-detail-con">商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。商品很好用，我很喜欢。11</view>
+            <view class="comment-date">2016-10-29 21:33</view>
+          </view>
+        </view>
+      </view>  
+    </view>
+
+    <!-- air-layer start -->
+    <view class="air-layer"></view>
+    <!-- air-layer end -->
+
+    <!-- foot start -->
+    <view class="foot">
+      <view class="foot-item other">
+        <view class="other-item">
+          <image class="custom-icon" src="../../images/kefu.png"/>
+          <label class="name custom-name">客服</label>
+        </view>
+        <view class="other-item">
+          <text class="cart-num">(1)</text>
+          <image class="cart-icon" src="../../images/icon-cart.png"/>
+          <label class="name cart-name">购物车</label>
+        </view>
+      </view>
+      <view class="foot-item add-to-cart">加入购物车</view>
+      <view class="foot-item buy-now">立即购买</view>
+    </view>
+    <!-- foot end -->
   </view>
-</page>
